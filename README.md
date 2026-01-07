@@ -1,51 +1,80 @@
-📌 Sistema de Chamados – Spring Boot
+# 📌 Sistema de Chamados – Spring Boot
 
 API REST desenvolvida com Java e Spring Boot para gerenciar usuários e chamados, aplicando regras de negócio comuns em sistemas reais. O projeto inclui validação, relacionamentos, filtros e operações completas de CRUD.
 
-🚀 Tecnologias
+## 🚀 Tecnologias
 
-Java 17
+> Java 17
 
-Spring Boot:
+1. Spring Boot:
+  1. Spring Web
+  2. Lombok
+  3. Spring Dev Tools
+  4. Spring Data JPA
+  5. Bean Validation
+2. PostgreSQL
 
-  Spring Web
+## 🔧 Funcionalidades
 
-  Lombok
+> [Usuários]
 
-  Spring Dev Tools
+```
+GET /users <- listar todos os usuários
+```
 
-  Spring Data JPA
+```
+GET /users/{:id} <- Pegar usuário pelo id
+```
 
-  Bean Validation
+```
+POST /users <- Criar usuário
+```
 
-PostgreSQL
+```
+PUT /users/{:id} <- Editar usuário
+```
 
-🔧 Funcionalidades
-Usuários
-
-Criar, listar, buscar por ID, atualizar e remover
+```
+DELETE /users/{:id} <- Deletar usuário
 
 Impede exclusão caso seja solicitante/responsável de algum chamado
+```
 
-Chamados
+> [Tickets]
 
-Criar, listar, buscar por ID, atualizar e excluir
+```
+POST /tickets <- Cria um ticket
+```
 
-Status inicial ABERTO
+```
+GET /tickets/{:id} <- Pega um ticket pelo Id
+```
 
-Atualização automática de createdIn e updatedIn
+```
+GET /tickets/status/{:status} <- Pega o status do ticket
+```
 
-Filtros:
+```
+GET /tickets/applicant/{:id} <- Pega o criador do ticket
+```
 
-  /chamados/status/{status}
+```
+GET /tickets/responsible/{:id} <- Dados para quem vai o ticket
+```
 
-  /chamados/solicitante/{id}
+# 📦 Como rodar
 
-  /chamados/responsavel/{id}
+```
+# Build da imagem
+docker build -t System-Tickets .
+```
+após buildar
+```
+docker run -p 8080:8080 System-Tickets
+```
 
-📦 Como rodar
-mvn spring-boot:run
-
-📄 Sobre
+# 📄 Sobre
 
 Projeto criado para treino e portfólio, seguindo boas práticas de backend e lógica aplicada no mercado.
+
+para ajudar no projeto de uma olhada no <a href="/CONTRIBUTING.md">CONTRIBUTING.md</a>
