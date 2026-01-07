@@ -64,6 +64,12 @@ GET /tickets/responsible/{:id} <- Dados para quem vai o ticket
 
 # 📦 Como rodar
 
+Você precisará ter o docker instalado na sua maquina.
+
+<a href="https://docs.docker.com/desktop/setup/install/windows-install/">Instale para Windows</a>
+&
+<a href="https://docs.docker.com/desktop/setup/install/linux/">Instale para Linux</a>
+
 ```
 # Build da imagem
 docker build -t System-Tickets .
